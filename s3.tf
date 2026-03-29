@@ -2,7 +2,7 @@
 # S3 BUCKET (PRIVATE)
 ########################################
 resource "aws_s3_bucket" "private_bucket" {
-  bucket = "iot-backend-s3"
+  bucket = "backend-s3"
 
   tags = {
     Name        = "iot-backend-s3"
@@ -64,7 +64,7 @@ resource "aws_iam_access_key" "app_user_key" {
 # IAM POLICY (LIMITED TO THIS BUCKET)
 ########################################
 resource "aws_iam_policy" "s3_access_policy" {
-  name        = "iot-backend-s3-access-policy"
+  name        = "backend-s3-access-policy"
   description = "Private access to S3 bucket for backend"
 
   policy = jsonencode({
